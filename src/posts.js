@@ -21,7 +21,9 @@ class Posts extends Component {
       <button onClick={()=>{
           this.props.delPost(this.props.id);
         }}>Delete.</button>
-      <button>Edit.</button>
+      <button onClick={()=>{
+          this.props.upPost(this.props.id);
+        }}>Edit.</button>
       <hr></hr>
     </div>
   )
