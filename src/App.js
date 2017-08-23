@@ -13,7 +13,7 @@ constructor(props){
 }
 
   async componentDidMount() {
-    const response = await fetch('https://classlessifieds.herokuapp.com/')
+    const response = await fetch('https://classlessifieds.herokuapp.com/classifieds')
     const json = await response.json()
     this.setState({classifieds : json})
   }
