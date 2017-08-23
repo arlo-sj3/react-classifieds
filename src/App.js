@@ -13,13 +13,13 @@ constructor(props){
 }
 
   async componentDidMount() {
-    const response = await fetch('http://localhost:8000/classifieds')
+    const response = await fetch('https://classlessifieds.herokuapp.com/')
     const json = await response.json()
     this.setState({classifieds : json})
   }
 
   delPost = (id) => {
-    fetch('http://localhost:8000/classifieds/' + id , {
+    fetch('https://classlessifieds.herokuapp.com/classifieds' + id , {
       method:'DELETE',
       headers: {
           'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ constructor(props){
   }
 
   upPost = (id) => {
-    fetch('http://localhost:8000/classifieds/' + id , {
+    fetch('https://classlessifieds.herokuapp.com/classifieds' + id , {
       method:'UPDATE',
       headers: {
           'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ addPost =  async (post) => {
   console.log(post.title);
   post.item_image = post.imageUrl
   delete post.imageUrl
-  const response = await fetch('http://localhost:8000/classifieds', {
+  const response = await fetch('https://classlessifieds.herokuapp.com/classifieds', {
     method:'POST',
     body: JSON.stringify(post),
     headers: {
